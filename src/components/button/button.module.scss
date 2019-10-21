@@ -1,0 +1,268 @@
+@import '../../utils/global.scss';
+
+$fillHoverOpacity: 0.8;
+$fillActiveOpacity: 0.7;
+
+$outlineHoverOpacity: 0.1;
+$outlineActiveOpacity: 0.2;
+
+$ghostHoverOpacity: 0.1;
+$ghostActiveOpacity: 0.2;
+
+$loaderHeight: 25px;
+$loaderWidth: 25px;
+$loaderBorderWidth: 4px;
+$loaderSpinDur: 0.55s;
+
+@mixin active($variant, $bgColor, $textColor) {
+    @if $variant == fill {
+        background-color: $bgColor;
+        color: $textColor;
+
+        &:hover {
+            background-color: rgba($bgColor, $fillHoverOpacity);
+        }
+
+        &:active {
+            background-color: rgba($bgColor, $fillActiveOpacity);
+        }
+    } @else if $variant == outline {
+        border: $borderWidth $borderStyle $bgColor;
+        color: $bgColor;
+
+        &:hover {
+            background-color: rgba($bgColor, $outlineHoverOpacity);
+        }
+
+        &:active {
+            background-color: rgba($bgColor, $outlineActiveOpacity);
+        }
+    } @else {
+        background-color: transparent;
+        color: $bgColor;
+
+        &:hover {
+            background-color: rgba($bgColor, $ghostHoverOpacity);
+        }
+
+        &:active {
+            background-color: rgba($bgColor, $ghostActiveOpacity);
+        }
+    }
+}
+
+@mixin disabled($variant, $bgColor, $textColor) {
+    cursor: not-allowed;
+    @if $variant == fill {
+        background-color: rgba($bgColor, $fillActiveOpacity);
+        color: $textColor;
+    } @else if $variant == outline {
+        border: $borderWidth $borderStyle $bgColor;
+        color: $bgColor;
+        background-color: rgba($bgColor, $outlineActiveOpacity);
+    } @else {
+        color: $bgColor;
+        background-color: rgba($bgColor, $ghostActiveOpacity);
+    }
+}
+
+@mixin loading($variant, $bgColor, $textColor) {
+    cursor: not-allowed;
+    color: transparent;
+    * {
+        color: transparent
+    }
+    @if $variant == fill {
+        background-color: rgba($bgColor, $fillActiveOpacity);
+        
+        &::before {
+            content: '';
+            position: absolute;
+            border: $loaderBorderWidth $borderStyle rgba($textColor, 0.5);
+            border-radius: 50%;
+            height: $loaderHeight;
+            width: $loaderWidth;
+            top: calc(50% - #{$loaderHeight / 2});
+            left: calc(50% - #{$loaderWidth / 2});;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            border: $loaderBorderWidth $borderStyle $textColor;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            border-radius: 50%;
+            height: $loaderHeight;
+            width: $loaderWidth;
+            top: calc(50% - #{$loaderHeight / 2});
+            left: calc(50% - #{$loaderWidth / 2});
+            animation: loaderSpin $loaderSpinDur ease-in-out infinite;
+        }
+    } @else if $variant == outline {
+        border: $borderWidth $borderStyle $bgColor;
+        background-color: rgba($bgColor, $outlineHoverOpacity);
+
+        &::before {
+            content: '';
+            position: absolute;
+            border: $loaderBorderWidth $borderStyle rgba($bgColor, 0.5);
+            border-radius: 50%;
+            height: $loaderHeight;
+            width: $loaderWidth;
+            top: calc(50% - #{$loaderHeight / 2});
+            left: calc(50% - #{$loaderWidth / 2});;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            border: $loaderBorderWidth $borderStyle $bgColor;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            border-radius: 50%;
+            height: $loaderHeight;
+            width: $loaderWidth;
+            top: calc(50% - #{$loaderHeight / 2});
+            left: calc(50% - #{$loaderWidth / 2});
+            animation: loaderSpin $loaderSpinDur ease-in-out infinite;
+        }
+    } @else {
+        &::before {
+            content: '';
+            position: absolute;
+            border: $loaderBorderWidth $borderStyle rgba($textColor, 0.5);
+            border-radius: 50%;
+            height: $loaderHeight;
+            width: $loaderWidth;
+            top: calc(50% - #{$loaderHeight / 2});
+            left: calc(50% - #{$loaderWidth / 2});;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            border: $loaderBorderWidth $borderStyle $textColor;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            border-radius: 50%;
+            height: $loaderHeight;
+            width: $loaderWidth;
+            top: calc(50% - #{$loaderHeight / 2});
+            left: calc(50% - #{$loaderWidth / 2});
+            animation: loaderSpin $loaderSpinDur ease-in-out infinite;
+        }
+    }
+}
+
+@mixin toggled($variant, $bgColor, $textColor) {
+    @if $variant == fill {
+        background-color: rgba($bgColor, $fillHoverOpacity);
+        color: $textColor;
+
+        &:active {
+            background-color: rgba($bgColor, $fillActiveOpacity);
+        }
+    } @else if $variant == outline {
+        border: $borderWidth $borderStyle $bgColor;
+        color: $bgColor;
+        background-color: rgba($bgColor, $outlineHoverOpacity);
+
+        &:active {
+            background-color: rgba($bgColor, $outlineActiveOpacity);
+        }
+    } @else {
+        color: $bgColor;
+        background-color: rgba($bgColor, $ghostHoverOpacity);
+
+        &:active {
+            background-color: rgba($bgColor, $ghostActiveOpacity);
+        }
+    }
+}
+
+@mixin variant($variant) {
+    &.#{$variant} {
+        &.primary{
+            &.active { @include active($variant, $primary, $light) }
+            &.disabled { @include disabled($variant, $primary, $light) }
+            &.loading { @include loading($variant, $primary, $light) }
+            &.toggled { @include toggled($variant, $primary, $light) }
+        }
+
+        &.secondary{
+            &.active { @include active($variant, $secondary, $light) }
+            &.disabled { @include disabled($variant, $secondary, $light) }
+            &.loading { @include loading($variant, $secondary, $light) }
+            &.toggled { @include toggled($variant, $secondary, $light) }
+        }
+
+        &.dark{
+            &.active { @include active($variant, $dark, $light) }
+            &.disabled { @include disabled($variant, $dark, $light) }
+            &.loading { @include loading($variant, $dark, $light) }
+            &.toggled { @include toggled($variant, $dark, $light) }
+        }
+
+        &.light{
+            &.active { @include active($variant, $light, $dark) }
+            &.disabled { @include disabled($variant, $light, $dark) }
+            &.loading { @include loading($variant, $light, $dark) }
+            &.toggled { @include toggled($variant, $light, $dark) }
+        }
+    }
+}
+.button {
+    margin: $margin;
+    padding: $padding;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: $borderRadius;
+    user-select: none;
+
+    &.inline {
+        display: inline-flex;
+    }
+
+    &.full {
+        display: flex;
+    }
+
+   @include variant(fill);
+   @include variant(outline);
+   @include variant(ghost);
+}
+
+.button-group {
+    margin: $margin;
+
+    .button {
+        margin: 0px;
+        border-radius: 0px;
+
+        &:first-child {
+            border-radius: $borderRadius 0px 0px $borderRadius;
+        }
+        &:last-child {
+            border-radius: 0px $borderRadius $borderRadius 0px;
+        }
+        &:only-child {
+            border-radius: $borderRadius;
+        }
+    }
+}
+
+@keyframes loaderSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

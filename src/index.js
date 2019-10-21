@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './app';
 import * as serviceWorker from './serviceWorker';
 import 'sanitize.css'
+import './utils/reset.scss'
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

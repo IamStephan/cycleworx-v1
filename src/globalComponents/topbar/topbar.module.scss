@@ -2,5 +2,7 @@
 
 .topbar {
     background-color: $dark;
-    height: 50px;
+    padding: $padding;
+    display: flex;
+    justify-content: space-between;
 }
