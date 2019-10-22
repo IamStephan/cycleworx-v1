@@ -144,6 +144,7 @@ export default class Topbar extends Component {
                       this.openPage('/services')
                       AppStore.closeSidebar()
                     }}
+                    state={this.props.location.pathname === '/services' ? 'toggled' : 'active'}
                     variant='ghost'
                   >
                     Services
@@ -154,6 +155,7 @@ export default class Topbar extends Component {
                       this.openPage('/rentals')
                       AppStore.closeSidebar()
                     }}
+                    state={this.props.location.pathname === '/rentals' ? 'toggled' : 'active'}
                     variant='ghost'
                   >
                     Rentals
@@ -164,6 +166,7 @@ export default class Topbar extends Component {
                       this.openPage('/bikes')
                       AppStore.closeSidebar()
                     }}
+                    state={this.props.location.pathname === '/bikes' ? 'toggled' : 'active'}
                     variant='ghost'
                   >
                     Bikes
@@ -174,6 +177,7 @@ export default class Topbar extends Component {
                       this.openPage('/routes')
                       AppStore.closeSidebar()
                     }}
+                    state={this.props.location.pathname === '/routes' ? 'toggled' : 'active'}
                     variant='ghost'
                   >
                     Routes

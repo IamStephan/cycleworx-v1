@@ -278,8 +278,6 @@ $loaderSpinDur: 0.55s;
     }
 
     .button {
-        flex: 1;
-
         &:only-child {
             border-radius: $borderRadius !important;
         }
