@@ -1,8 +1,17 @@
-import { action } from 'mobx';
+import { action, observable } from 'mobx';
 
 class AppStore {
-  @action logToConsole () {
-    alert('sedrtfygbuhnj')
+  @observable sidebar = {
+    isOpen: false
+  }
+
+  @action openSidebar () {
+    this.sidebar.isOpen = true
+    console.log(this.sidebar.isOpen)
+  }
+
+  @action closeSidebar () {
+    this.sidebar.isOpen = false
   }
 }
 

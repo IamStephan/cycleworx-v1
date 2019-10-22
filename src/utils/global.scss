@@ -5,8 +5,8 @@
 */
 $dark: #212121;
 $light: #FAFAFA;
-$primary: #2980b9;
-$secondary: #e74c3c;
+$primary: #e74c3c;
+$secondary: #2980b9;
 
 /*
 ===============================
@@ -24,3 +24,15 @@ $padding: 8px;
 $borderStyle: solid;
 $borderWidth: 1px;
 $borderRadius: 4px;
+
+:export {
+    // Colors
+    dark: $dark;
+    light: $light;
+    primary: $primary;
+    secondary: $secondary;
+
+    // Spacing
+    padding: $padding;
+    margin: $margin;
+}

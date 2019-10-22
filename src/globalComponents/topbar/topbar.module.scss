@@ -1,8 +1,46 @@
 @import '../../utils/global.scss';
 
+$topbarBreakPoint: 450;
+
 .topbar {
     background-color: $dark;
     padding: $padding;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+
+    .sidebar {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        display: flex;
+
+        .dimmer {
+            flex: 1;
+            background-color: rgba($dark, 0.35);
+        }
+
+        .menu {
+            width: calc(100vw - 75px);
+            background-color: $dark;
+            display: flex;
+            flex-direction: column;
+            padding: $padding;
+
+            .title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: $light;
+                margin-bottom: $margin;
+            }
+        }
+    }
+}
+
+:export {
+    topbarBreakPoint: $topbarBreakPoint;
 }

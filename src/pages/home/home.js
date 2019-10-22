@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 
-import Button from '../../components/button/button'
+import styles from './home.module.scss'
+
+import jumpingImg from '../../static/mark-northern-qvk8QFyGfWA-unsplash.jpg';
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        <Button.Group>
-          <Button onClick={() => alert('asdtasd')}>Button</Button>
-          <Button onClick={() => alert('asdtasd')}>Button</Button>
-        </Button.Group>
-        <Button onClick={() => alert('asdtasd')}>Button</Button>
+      <div className={`${styles['home']}`}>
+        asd
       </div>
     );
   }
