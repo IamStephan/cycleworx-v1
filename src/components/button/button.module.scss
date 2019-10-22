@@ -240,17 +240,48 @@ $loaderSpinDur: 0.55s;
 }
 
 .button-group {
-    .button {
-        border-radius: 0px;
+    &.inline {
+        display: inline-flex;
+    }
+    &.full {
+        display: flex;
+    }
 
-        &:first-child {
-            border-radius: $borderRadius 0px 0px $borderRadius;
+    &.horizontal {
+        flex-direction: row;
+
+        .button {
+            border-radius: 0px;
+    
+            &:first-child {
+                border-radius: $borderRadius 0px 0px $borderRadius;
+            }
+            &:last-child {
+                border-radius: 0px $borderRadius $borderRadius 0px;
+            }
         }
-        &:last-child {
-            border-radius: 0px $borderRadius $borderRadius 0px;
+    }
+
+    &.vertical {
+        flex-direction: column;
+
+        .button {
+            border-radius: 0px;
+    
+            &:first-child {
+                border-radius: $borderRadius $borderRadius 0px 0px;
+            }
+            &:last-child {
+                border-radius: 0px 0px $borderRadius $borderRadius;
+            }
         }
+    }
+
+    .button {
+        flex: 1;
+
         &:only-child {
-            border-radius: $borderRadius;
+            border-radius: $borderRadius !important;
         }
     }
 }

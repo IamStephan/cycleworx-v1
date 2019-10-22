@@ -3,9 +3,24 @@ import PropTypes from 'prop-types';
 import styles from './button.module.scss';
 
 class ButtonGroup extends Component {
+  static propTypes = {
+    flow: PropTypes.oneOf(['vertical', 'horizontal']),
+    width: PropTypes.oneOf(['inline', 'full'])
+  }
+
+  static defaultProps = {
+    flow: 'horizontal',
+    width: 'inline'
+  }
+
   render() {
+    const { flow, width } = this.props
+
     return (
-      <div className={`${styles['button-group']}`}>
+      <div
+        className={`${styles['button-group']} ${styles[flow]} ${styles[width]}`}
+        {...this.props}
+      >
         {this.props.children}
       </div>
     )
@@ -30,7 +45,7 @@ export default class Button extends Component {
   }
 
   render() {
-    let { variant, type, state, width } = this.props
+    const { variant, type, state, width } = this.props
 
     return (
       <div

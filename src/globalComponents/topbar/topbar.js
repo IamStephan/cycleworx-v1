@@ -124,10 +124,61 @@ export default class Topbar extends Component {
                     <Icon name='x-circle' color={globals.light} />
                   </Button>
                 </div>
+
+                <div>
+                  <Button 
+                    onClick={() => {
+                      this.openPage('/')
+                      AppStore.closeSidebar()
+                    }}
+                    width='full'
+                  >
+                    <Icon name='cycling' color={globals.light} style={{marginRight: globals.margin}} />
+                    Home
+                  </Button>
+                </div>
                 
-                <Button>
-                  Home
-                </Button>
+                <Button.Group flow='vertical' width='full'>
+                  <Button
+                    onClick={() => {
+                      this.openPage('/services')
+                      AppStore.closeSidebar()
+                    }}
+                    variant='ghost'
+                  >
+                    Services
+                  </Button>
+
+                  <Button
+                    onClick={() => {
+                      this.openPage('/rentals')
+                      AppStore.closeSidebar()
+                    }}
+                    variant='ghost'
+                  >
+                    Rentals
+                  </Button>
+
+                  <Button
+                    onClick={() => {
+                      this.openPage('/bikes')
+                      AppStore.closeSidebar()
+                    }}
+                    variant='ghost'
+                  >
+                    Bikes
+                  </Button>
+
+                  <Button
+                    onClick={() => {
+                      this.openPage('/routes')
+                      AppStore.closeSidebar()
+                    }}
+                    variant='ghost'
+                  >
+                    Routes
+                  </Button>
+                </Button.Group>
 
               </div>
             </div>

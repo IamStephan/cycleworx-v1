@@ -26,8 +26,6 @@ $topbarBreakPoint: 450;
         .menu {
             width: calc(100vw - 75px);
             background-color: $dark;
-            display: flex;
-            flex-direction: column;
             padding: $padding;
 
             .title {
