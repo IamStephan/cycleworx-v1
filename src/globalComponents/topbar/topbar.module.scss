@@ -1,15 +1,18 @@
 @import '../../utils/global.scss';
 
 $topbarBreakPoint: 450;
+$topbarHeight: 60;
 
 .topbar {
-    background-color: $dark;
+    background-color: lighten($dark, 3%);
     padding: $padding;
     display: flex;
+    height: #{$topbarHeight}px;
     align-items: center;
     justify-content: space-between;
 }
 
 :export {
     topbarBreakPoint: $topbarBreakPoint;
+    topbarHeight: $topbarHeight;
 }

@@ -21,7 +21,7 @@
     }
 
     .menu {
-        background-color: $dark;
+        background-color: lighten($dark, 3%);
         padding: $padding;
         width: 0;
         transition: width 250ms, opacity 250ms;

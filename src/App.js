@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 
+import globals from './utils/global.scss';
+
 import Topbar from './globalComponents/topbar/topbar'
 import Footer from './globalComponents/footer/footer'
 
@@ -16,7 +18,9 @@ const stores = {
 class App extends Component {
   render() {
     return (
-      <main>
+      <main style={{
+        backgroundColor: globals.dark
+      }}>
         <Provider {...stores}>
           <Router>
             <Topbar />
