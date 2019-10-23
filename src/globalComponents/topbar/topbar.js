@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
+import { CSSTransition } from 'react-transition-group';
 
 import globals from '../../utils/global.scss';
 import styles from './topbar.module.scss';
 
 import Button from '../../components/button/button';
 import Icon from '../../components/icon/icon'
+
 
 @withRouter
 @inject('AppStore')
@@ -53,9 +55,9 @@ export default class Topbar extends Component {
     return (
       <nav className={`${styles['topbar']}`}>
         <div className={`${styles['left']}`}>
-          <Button onClick={() => this.openPage('/')}>
+          <Button variant='ghost' onClick={() => this.openPage('/')}>
             <Icon name='cycling' color={globals.light} style={{marginRight: globals.margin}} />
-            Home
+            Cycleworx
           </Button>
         </div>
 
@@ -109,12 +111,12 @@ export default class Topbar extends Component {
         </div>
 
         {
-          AppStore.sidebar.isOpen ? (
+          AppStore.sidebar.isOpen && (
             <div className={`${styles['sidebar']}`}>
               <div className={`${styles['dimmer']}`}
                 onClick={() => AppStore.closeSidebar()}
               />
-              
+  
               <div className={`${styles['menu']}`}>
                 <div className={`${styles['title']}`}>
                   <h2>
@@ -186,7 +188,7 @@ export default class Topbar extends Component {
 
               </div>
             </div>
-          ) : null
+          )
         }
       </nav>
     );

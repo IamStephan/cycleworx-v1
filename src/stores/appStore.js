@@ -7,7 +7,6 @@ class AppStore {
 
   @action openSidebar () {
     this.sidebar.isOpen = true
-    console.log(this.sidebar.isOpen)
   }
 
   @action closeSidebar () {
