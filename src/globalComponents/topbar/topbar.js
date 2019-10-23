@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
-import { CSSTransition } from 'react-transition-group';
 
 import globals from '../../utils/global.scss';
 import styles from './topbar.module.scss';
+
+import MobileRightBar from '../../components/mobileRightBar/mobileRightBar';
 
 import Button from '../../components/button/button';
 import Icon from '../../components/icon/icon'
@@ -55,7 +56,11 @@ export default class Topbar extends Component {
     return (
       <nav className={`${styles['topbar']}`}>
         <div className={`${styles['left']}`}>
-          <Button variant='ghost' onClick={() => this.openPage('/')}>
+          <Button
+            state={this.props.location.pathname === '/' ? 'toggled' : 'active'}
+            variant='ghost'
+            onClick={() => this.openPage('/')}
+          >
             <Icon name='cycling' color={globals.light} style={{marginRight: globals.margin}} />
             Cycleworx
           </Button>
@@ -111,84 +116,7 @@ export default class Topbar extends Component {
         </div>
 
         {
-          AppStore.sidebar.isOpen && (
-            <div className={`${styles['sidebar']}`}>
-              <div className={`${styles['dimmer']}`}
-                onClick={() => AppStore.closeSidebar()}
-              />
-  
-              <div className={`${styles['menu']}`}>
-                <div className={`${styles['title']}`}>
-                  <h2>
-                    Cycleworx
-                  </h2>
-                  <Button onClick={() => AppStore.closeSidebar()} variant='ghost' type='light'>
-                    <Icon name='x-circle' color={globals.light} />
-                  </Button>
-                </div>
-
-                <div>
-                  <Button 
-                    onClick={() => {
-                      this.openPage('/')
-                      AppStore.closeSidebar()
-                    }}
-                    width='full'
-                  >
-                    <Icon name='cycling' color={globals.light} style={{marginRight: globals.margin}} />
-                    Home
-                  </Button>
-                </div>
-                
-                <Button.Group flow='vertical' width='full'>
-                  <Button
-                    onClick={() => {
-                      this.openPage('/services')
-                      AppStore.closeSidebar()
-                    }}
-                    state={this.props.location.pathname === '/services' ? 'toggled' : 'active'}
-                    variant='ghost'
-                  >
-                    Services
-                  </Button>
-
-                  <Button
-                    onClick={() => {
-                      this.openPage('/rentals')
-                      AppStore.closeSidebar()
-                    }}
-                    state={this.props.location.pathname === '/rentals' ? 'toggled' : 'active'}
-                    variant='ghost'
-                  >
-                    Rentals
-                  </Button>
-
-                  <Button
-                    onClick={() => {
-                      this.openPage('/bikes')
-                      AppStore.closeSidebar()
-                    }}
-                    state={this.props.location.pathname === '/bikes' ? 'toggled' : 'active'}
-                    variant='ghost'
-                  >
-                    Bikes
-                  </Button>
-
-                  <Button
-                    onClick={() => {
-                      this.openPage('/routes')
-                      AppStore.closeSidebar()
-                    }}
-                    state={this.props.location.pathname === '/routes' ? 'toggled' : 'active'}
-                    variant='ghost'
-                  >
-                    Routes
-                  </Button>
-                </Button.Group>
-
-              </div>
-            </div>
-          )
+          AppStore.sidebar.isOpen && ( <MobileRightBar /> )
         }
       </nav>
     );

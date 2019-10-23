@@ -225,6 +225,8 @@ $loaderSpinDur: 0.55s;
     position: relative;
     border-radius: $borderRadius;
     user-select: none;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 
     &.inline {
         display: inline-flex;
