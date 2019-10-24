@@ -4,12 +4,15 @@ $topbarBreakPoint: 450;
 $topbarHeight: 60;
 
 .topbar {
-    background-color: lighten($dark, 3%);
+    background-color: $dark;
     padding: $padding;
     display: flex;
     height: #{$topbarHeight}px;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    z-index: 998;
 }
 
 :export {

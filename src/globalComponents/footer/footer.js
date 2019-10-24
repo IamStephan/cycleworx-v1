@@ -15,6 +15,8 @@ export default class Footer extends Component {
           <Button variant='ghost' type='light'>2019 Cycleworx Langebaan</Button>
           |
           <Button variant='ghost' type='light'>Sitemap</Button>
+          |
+          <Button variant='ghost' type='light'>Website Author</Button>
         </div>
         <div className={`${styles['social']}`}>
           <Button.Group>

@@ -2,7 +2,7 @@
 
 .footer {
     padding: $padding;
-    background-color: lighten($dark, 3%);
+    background-color: $dark;
 
     .info {
         display: flex;
@@ -10,6 +10,7 @@
         justify-content: center;
         color: $light;
         margin: $margin;
+        flex-wrap: wrap;
     }
 
     .social {

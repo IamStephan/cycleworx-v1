@@ -2,7 +2,7 @@
 @import '../../globalComponents/topbar/topbar.module.scss';
 
 .home {
-    background-color: $dark;
+    background-color: $light;
     height: calc(100vh - #{$topbarHeight}px);
     position: relative;
 }
