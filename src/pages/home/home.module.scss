@@ -2,7 +2,10 @@
 @import '../../globalComponents/topbar/topbar.module.scss';
 
 .home {
-    background-color: $light;
-    height: calc(100vh - #{$topbarHeight}px);
+    background-color: lighten($dark, 3%);
     position: relative;
+
+    .carousal-space {
+        height: calc(100vh - #{$topbarHeight}px);
+    }
 }
