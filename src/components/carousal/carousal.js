@@ -74,6 +74,7 @@ export default class Carousal extends Component {
               <img
                 className={`${styles['image']}`}
                 src={item.src}
+                alt={item.title}
                 {...this.props}
               />
 
