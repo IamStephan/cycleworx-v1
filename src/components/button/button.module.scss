@@ -279,9 +279,9 @@ $loaderSpinDur: 0.55s;
         }
     }
 
-    .button {
+    .button.vertical, .button.horizontal {
         &:only-child {
-            border-radius: $borderRadius !important;
+            border-radius: $borderRadius;
         }
     }
 }

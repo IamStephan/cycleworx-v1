@@ -8,4 +8,18 @@
     .carousal-space {
         height: calc(100vh - #{$topbarHeight}px);
     }
+
+    .section {
+        padding: 50px;
+
+        .section-title {
+            color: $light;
+            text-align: center;
+            margin-bottom: $margin;
+        }
+
+        .section-content {
+            
+        }
+    }
 }

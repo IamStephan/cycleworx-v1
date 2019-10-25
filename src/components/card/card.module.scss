@@ -1,0 +1,10 @@
+@import '../../utils/global.scss';
+
+.card {
+    border-radius: $borderRadius;
+    border: $borderWidth $borderStyle rgba($light, 0.35);
+
+    * {
+        color: $light
+    }
+}

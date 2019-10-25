@@ -7,6 +7,7 @@ import test from '../../static/riley-harrison-9TNGeodpVEA-unsplash.jpg';
 import test2 from '../../static/mark-northern-qvk8QFyGfWA-unsplash.jpg';
 
 import Carousal from '../../components/carousal/carousal'
+import Card from '../../components/card/card'
 
 export default class Home extends Component {
   render() {
@@ -21,14 +22,16 @@ export default class Home extends Component {
           />
         </div>
 
-        <section>
-          <h1 style={{
-            color: globals.light,
-            textAlign: 'center',
-            padding: 50
-          }}>
+        <section className={`${styles['section']}`}>
+          <h1 className={`${styles['section-title']}`}>
             Our Services
           </h1>
+
+          <div className={`${styles['section-content']}`}>
+            <Card>
+              <p>vbhjknl</p>
+            </Card>
+          </div>
         </section>
       </div>
     )
