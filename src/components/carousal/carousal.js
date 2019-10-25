@@ -71,7 +71,19 @@ export default class Carousal extends Component {
               key={i}
               className={`${styles['image-container']} ${this.state.activeIndex === i ? styles['active'] : ''}`}
             >
+              <img
+                className={`${styles['image']}`}
+                src={item.src}
+                {...this.props}
+              />
+
               <div className={`${styles['elements']}`}>
+                <div className={`${styles['overlay']}`}>
+                  <h1 className={`${styles['title']}`}>
+                    {item.title}
+                  </h1>
+                </div>
+
                 <div className={`${styles['controls']}`}>
                   <div onClick={() => {
                     this.slideLeft()
@@ -87,18 +99,7 @@ export default class Carousal extends Component {
                     <Icon name='right-arrow' type='solid' color={globals.light} />
                   </div>
                 </div>
-
-                <div className={`${styles['overlay']}`}>
-                  <h1 className={`${styles['title']}`}>
-                    {item.title}
-                  </h1>
-                </div>
               </div>
-              <img
-                className={`${styles['image']}`}
-                src={item.src}
-                {...this.props}
-              />
             </div>
           ))
         }
