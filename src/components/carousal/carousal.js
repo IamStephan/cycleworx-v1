@@ -79,12 +79,15 @@ export default class Carousal extends Component {
               />
 
               <div className={`${styles['elements']}`}>
-                <div className={`${styles['overlay']}`}>
-                  <h1 className={`${styles['title']}`}>
-                    {item.title}
-                  </h1>
-                </div>
-
+                {
+                  item.title && (
+                    <div className={`${styles['overlay']}`}>
+                      <h1 className={`${styles['title']}`}>
+                        {item.title}
+                      </h1>
+                    </div>
+                  )
+                }
                 <div className={`${styles['controls']}`}>
                   <div onClick={() => {
                     this.slideLeft()

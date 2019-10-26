@@ -4,7 +4,7 @@
     width: 50px;
     height: 50px;
     background-color: $dark;
-    border-radius: 50%;
+    border-radius: $borderRadius;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +87,6 @@
         .overlay {
             display: flex;
             flex-direction: column;
-            background-color: rgba($dark, 0.85);
 
             .title {
                 color: $light;

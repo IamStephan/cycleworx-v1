@@ -18,7 +18,10 @@ export default class Card extends Component {
   render() {
     const { layout, flow } = this.props
     return (
-      <div className={`${styles['card']} ${styles[layout]} ${styles[flow]}`}>
+      <div
+        className={`${styles['card']} ${styles[layout]} ${styles[flow]}`}
+        {...this.props}
+      >
         {this.props.children}
       </div>
     );
