@@ -49,68 +49,75 @@ export default class MobileRightBar extends Component {
         />
   
         <div className={`${styles['menu']} ${this.state.open ? styles['active'] : ''}`}>
-          <div className={`${styles['title']}`}>
-            <h2>
-              Cycleworx
-            </h2>
-            <Button onClick={() => this.closeSidebar()} variant='ghost' type='light'>
-              <Icon name='x-circle' color={globals.light} />
-            </Button>
+          <div className={`${styles['top']}`}>
+            <div className={`${styles['title']}`}>
+              <h2>
+                Cycleworx
+              </h2>
+              <Button onClick={() => this.closeSidebar()} variant='ghost' type='light'>
+                <Icon name='x-circle' color={globals.light} />
+              </Button>
+            </div>
+
+            <div>
+              <Button 
+                onClick={() => {
+                  this.openPage('/')
+                }}
+                width='full'
+              >
+                <Icon name='cycling' color={globals.light} style={{marginRight: globals.margin}} />
+                Home
+              </Button>
+            </div>
+
+            <Button.Group flow='vertical' width='full'>
+              <Button
+                onClick={() => {
+                  this.openPage('/services')
+                }}
+                state={this.props.location.pathname === '/services' ? 'toggled' : 'active'}
+                variant='ghost'
+              >
+                Services
+              </Button>
+
+              <Button
+                onClick={() => {
+                  this.openPage('/rentals')
+                }}
+                state={this.props.location.pathname === '/rentals' ? 'toggled' : 'active'}
+                variant='ghost'
+              >
+                Rentals
+              </Button>
+
+              <Button
+                onClick={() => {
+                  this.openPage('/bikes')
+                }}
+                state={this.props.location.pathname === '/bikes' ? 'toggled' : 'active'}
+                variant='ghost'
+              >
+                Bikes
+              </Button>
+
+              <Button
+                onClick={() => {
+                  this.openPage('/routes')
+                }}
+                state={this.props.location.pathname === '/routes' ? 'toggled' : 'active'}
+                variant='ghost'
+              >
+                Routes
+              </Button>
+            </Button.Group>
           </div>
-
-          <div>
-            <Button 
-              onClick={() => {
-                this.openPage('/')
-              }}
-              width='full'
-            >
-              <Icon name='cycling' color={globals.light} style={{marginRight: globals.margin}} />
-              Home
-            </Button>
+          
+          <div className={`${styles['bottom']}`}>
+            <Icon name='code-alt' color={globals.light} />
+            <Button variant='ghost' type='light'>Developer</Button>
           </div>
-                
-          <Button.Group flow='vertical' width='full'>
-            <Button
-              onClick={() => {
-                this.openPage('/services')
-              }}
-              state={this.props.location.pathname === '/services' ? 'toggled' : 'active'}
-              variant='ghost'
-            >
-              Services
-            </Button>
-
-            <Button
-              onClick={() => {
-                this.openPage('/rentals')
-              }}
-              state={this.props.location.pathname === '/rentals' ? 'toggled' : 'active'}
-              variant='ghost'
-            >
-              Rentals
-            </Button>
-
-            <Button
-              onClick={() => {
-                this.openPage('/bikes')
-              }}
-              state={this.props.location.pathname === '/bikes' ? 'toggled' : 'active'}
-              variant='ghost'
-            >
-              Bikes
-            </Button>
-
-            <Button
-              onClick={() => {
-                this.openPage('/routes')
-              }}
-              state={this.props.location.pathname === '/routes' ? 'toggled' : 'active'}
-              variant='ghost'
-            >
-              Routes
-            </Button>
-          </Button.Group>
         </div>
       </div>
     );
