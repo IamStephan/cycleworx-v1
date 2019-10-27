@@ -13,7 +13,9 @@ $breakPointTwo: 550px;
     }
 
     .section {
-        padding: 50px;
+        padding: $padding;
+        padding-top: 50px;
+        padding-bottom: 50px;
         max-width: 980px;
         margin: auto;
 
@@ -68,15 +70,6 @@ $breakPointTwo: 550px;
             .section-content {
                 flex-direction: column;
             }
-        }
-    }
-}
-
-@media screen and (max-width: $breakPointTwo) {
-    .home {
-        .section {
-            padding-left: $padding;
-            padding-right: $padding;
         }
     }
 }
