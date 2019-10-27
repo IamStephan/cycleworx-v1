@@ -37,6 +37,7 @@ class App extends Component {
             <Topbar />
             <Switch>
               <Route exact path='/' component={Home} />
+              <Route exact path='/contact' component={Contact} />
             </Switch>
             <Footer />
           </Router>

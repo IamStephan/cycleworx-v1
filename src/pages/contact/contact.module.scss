@@ -1,0 +1,26 @@
+@import '../../utils/global.scss';
+@import '../../globalComponents/topbar/topbar.module.scss';
+
+.contact {
+    background-color: lighten($dark, 3%);
+    display: flex;
+    height: calc(100vh - #{$topbarHeight}px);
+
+    .contact-info {
+        flex: 1;
+        color: $light;
+        padding: $padding;
+        text-align: center;
+    }
+
+    .contact-map {
+        flex: 1;
+        padding: $padding;
+        position: relative;
+
+        iframe {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

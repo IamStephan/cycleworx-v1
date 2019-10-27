@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import globals from '../../utils/global.scss';
 import styles from './footer.module.scss'
@@ -6,6 +7,7 @@ import styles from './footer.module.scss'
 import Button from '../../components/button/button';
 import Icon from '../../components/icon/icon';
 
+@withRouter
 export default class Footer extends Component {
   render() {
     return (
@@ -23,7 +25,7 @@ export default class Footer extends Component {
             <Button>
               <Icon color={globals.light} name='facebook' type='logo' />
             </Button>
-            <Button>
+            <Button onClick={() => this.props.history.push('/contact')}>
               <Icon color={globals.light} name='mail-send' type='logo' />
             </Button>
           </Button.Group>
