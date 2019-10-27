@@ -7,18 +7,19 @@ import globals from './utils/global.scss';
 
 import Topbar from './globalComponents/topbar/topbar'
 import Footer from './globalComponents/footer/footer'
+import Loader from './components/pageLoader/pageLoader'
 
 import AppStore from './stores/appStore'
 
 // Loadable components
 const Home = Loadable({
   loader: () => import('./pages/home/home'),
-  loading: () => (<div>Loading...</div>)
+  loading: Loader
 })
 
 const Contact = Loadable({
   loader: () => import('./pages/contact/contact'),
-  loading: () => (<div>Loading...</div>)
+  loading: Loader
 })
 
 const stores = {

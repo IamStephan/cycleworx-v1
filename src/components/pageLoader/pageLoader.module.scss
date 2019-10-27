@@ -1,0 +1,50 @@
+@import '../../utils/global.scss';
+@import '../../globalComponents/topbar/topbar.module.scss';
+
+$loaderHeight: 50px;
+$loaderWidth: 50px;
+$loaderBorder: 7px;
+
+$animDur: 0.75s;
+
+.loader {
+    height: calc(100vh - #{$topbarHeight}px);
+    background-color: lighten($dark, 3%);
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: $loaderWidth;
+        left: calc(50% - #{$loaderWidth / 2});
+        height: $loaderHeight;
+        top: calc(50% - #{$loaderHeight / 2});
+        border: $borderStyle $loaderBorder rgba($light, 0.5);
+        border-radius: 50%;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: $loaderWidth;
+        left: calc(50% - #{$loaderWidth / 2});
+        height: $loaderHeight;
+        top: calc(50% - #{$loaderHeight / 2});
+        border: $borderStyle $loaderBorder $light;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        border-radius: 50%;
+        animation: loaderSpin $animDur ease-in-out infinite;
+    }
+}
+
+@keyframes loaderSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
