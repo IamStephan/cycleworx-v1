@@ -7,7 +7,7 @@ export default class Contact extends Component {
       <div className={`${styles['contact']}`}>
         <section className={`${styles['contact-info']}`}>
           <h1>Contact Us</h1>
-
+          <p>Coming soon</p>
         </section>
 
         <section className={`${styles['contact-map']}`}>
