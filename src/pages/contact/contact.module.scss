@@ -13,6 +13,10 @@ $breakpointOne: 700px;
         color: $light;
         padding: $padding;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .contact-map {
@@ -30,5 +34,14 @@ $breakpointOne: 700px;
 @media screen and (max-width: $breakpointOne) {
     .contact{
         flex-direction: column;
+        height: auto;
+
+        .contact-info {
+            height: calc(100vh - #{$topbarHeight}px);
+        }
+
+        .contact-map {
+            height: calc(100vh - #{$topbarHeight}px);
+        }
     }
 }
