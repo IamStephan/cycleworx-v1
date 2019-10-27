@@ -7,7 +7,19 @@ export default class Contact extends Component {
       <div className={`${styles['contact']}`}>
         <section className={`${styles['contact-info']}`}>
           <h1>Contact Us</h1>
-          <p>Coming soon</p>
+          <br />
+          <div>
+            <h2>Location</h2>
+            <p>Madriko Centre Oostewal Road,</p>
+            <p>Langebaan,</p>
+            <p>7357</p>
+          </div>
+          <br />
+          <div>
+            <h2>Contact information</h2>
+            <p><b>Email:</b> cycleworxlbn@gmail.com</p>
+            <p><b>Tel:</b> 073 734 4098</p>
+          </div>
         </section>
 
         <section className={`${styles['contact-map']}`}>

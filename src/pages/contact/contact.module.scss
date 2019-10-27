@@ -1,6 +1,8 @@
 @import '../../utils/global.scss';
 @import '../../globalComponents/topbar/topbar.module.scss';
 
+$breakpointOne: 700px;
+
 .contact {
     background-color: lighten($dark, 3%);
     display: flex;
@@ -22,5 +24,11 @@
             height: 100%;
             width: 100%;
         }
+    }
+}
+
+@media screen and (max-width: $breakpointOne) {
+    .contact{
+        flex-direction: column;
     }
 }
