@@ -1,0 +1,39 @@
+@import '../../utils/global.scss';
+
+.modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+
+    .content {
+        background-color: $dark;
+        border: $borderWidth $borderStyle rgba($light, 0.5);
+        border-radius: $borderRadius;
+        z-index: 102;
+        flex: 1;
+
+        .title {
+            padding: $padding;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $light;
+        }
+    }
+
+    .dimmer {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($dark, 0.5);
+    }
+}

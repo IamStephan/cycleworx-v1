@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { observer, inject } from 'mobx-react';
 
 import globals from '../../utils/global.scss';
 import styles from './home.module.scss'
@@ -17,8 +18,12 @@ const customCardStyle = {
   flexDirection: 'column',
 }
 
+@inject('AppStore')
+@observer
 export default class Home extends Component {
   render() {
+    const { AppStore } = this.props
+
     return (
       <div className={`${styles['home']}`}>
         <div className={`${styles['carousal-space']}`}>
@@ -42,7 +47,7 @@ export default class Home extends Component {
                 Give your bike a fresh start and feel.
               </p>
               <div className={`${styles['btn']}`}>
-                <Button width='full' variant='ghost'>
+                <Button width='full' variant='ghost' onClick={() => AppStore.OpenModal('Full Service', (<p>dsgf</p>))}>
                   Details
                 </Button>
               </div>

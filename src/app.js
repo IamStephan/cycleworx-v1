@@ -8,6 +8,7 @@ import globals from './utils/global.scss';
 import ScrollToTop from './globalComponents/scrollToTop/scrollToTop'
 import Topbar from './globalComponents/topbar/topbar'
 import Footer from './globalComponents/footer/footer'
+import Modal from './globalComponents/modal/modal'
 import Loader from './components/pageLoader/pageLoader'
 
 import AppStore from './stores/appStore'
@@ -36,6 +37,7 @@ class App extends Component {
         <Provider {...stores}>
           <Router>
             <ScrollToTop />
+            <Modal />
             <Topbar />
             <Switch>
               <Route exact path='/' component={Home} />
