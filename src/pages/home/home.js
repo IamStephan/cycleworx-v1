@@ -21,6 +21,16 @@ const customCardStyle = {
 @inject('AppStore')
 @observer
 export default class Home extends Component {
+  constructor(props) {
+    super(props)
+
+    this.openPage = this.openPage.bind(this)
+  }
+
+  openPage(url) {
+    this.props.history.push(url)
+  }
+
   render() {
     const { AppStore } = this.props
 
@@ -79,7 +89,7 @@ export default class Home extends Component {
           </div>
 
           <div className={`${styles['section-action']}`}>
-            <Button>
+            <Button onClick={() => this.openPage('/services')}>
               View All Services
             </Button>
           </div>

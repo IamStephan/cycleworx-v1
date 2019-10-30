@@ -1,0 +1,26 @@
+@import '../../utils/global.scss';
+@import '../../globalComponents/topbar/topbar.module.scss';
+
+
+.services {
+    min-height: calc(100vh - #{$topbarHeight}px);
+    background-color: lighten($dark, 3%);
+    padding: $padding;
+
+    .main {
+        max-width: 980px;
+        margin: auto;
+
+        .section {
+            h1 {
+                text-align: center;
+                color: $light;
+            }
+
+            .content {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+    }
+}

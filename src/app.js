@@ -19,6 +19,11 @@ const Home = Loadable({
   loading: Loader
 })
 
+const Services = Loadable({
+  loader: () => import('./pages/services/services'),
+  loading: Loader
+})
+
 const Contact = Loadable({
   loader: () => import('./pages/contact/contact'),
   loading: Loader
@@ -41,6 +46,7 @@ class App extends Component {
             <Topbar />
             <Switch>
               <Route exact path='/' component={Home} />
+              <Route exact path='/services' component={Services} />
               <Route exact path='/contact' component={Contact} />
             </Switch>
             <Footer />
