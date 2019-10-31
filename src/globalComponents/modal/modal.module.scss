@@ -17,6 +17,7 @@
         border-radius: $borderRadius;
         z-index: 102;
         flex: 1;
+        max-width: 980px;
 
         .title {
             padding: $padding;
