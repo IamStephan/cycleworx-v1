@@ -28,15 +28,22 @@ export default class Services extends Component {
               {
                 [1,1,1,1,1].map(i => (
                   <Card style={customCardStyle}>
-                    <h2 className={`${styles['title']}`}>Full Service</h2>
-                    <p className={`${styles['content']}`}>
-                      Give your bike a fresh start and feel.
-                    </p>
-                    <div className={`${styles['btn']}`}>
+                    <Card.Title>
+                      <h2 className={`${styles['title']}`}>Full Service</h2>
+                    </Card.Title>
+                    
+                    <Card.Content>
+                      <p>
+                        Give your bike a fresh start and feel.
+                      </p>
+                    </Card.Content>
+                    
+
+                    <Card.Action>
                       <Button width='full' variant='ghost'>
                         Details
                       </Button>
-                    </div>
+                    </Card.Action>
                   </Card>
                 )) 
               }

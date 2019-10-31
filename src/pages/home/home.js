@@ -14,11 +14,9 @@ import Card from '../../components/card/card'
 const customCardStyle = {
   margin: globals.margin,
   flex: 1,
-  display: 'flex',
-  flexDirection: 'column',
 }
 
-@inject('AppStore')
+@inject('AppStore', 'ServiceStore')
 @observer
 export default class Home extends Component {
   constructor(props) {
@@ -32,7 +30,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const { AppStore } = this.props
+    const { AppStore, ServiceStore } = this.props
 
     return (
       <div className={`${styles['home']}`}>
@@ -51,41 +49,30 @@ export default class Home extends Component {
           </h1>
 
           <div className={`${styles['section-content']}`}>
-            <Card style={customCardStyle}>
-              <h2 className={`${styles['title']}`}>Full Service</h2>
-              <p className={`${styles['content']}`}>
-                Give your bike a fresh start and feel.
-              </p>
-              <div className={`${styles['btn']}`}>
-                <Button width='full' variant='ghost' onClick={() => AppStore.OpenModal('Full Service', (<p>dsgf</p>))}>
-                  Details
-                </Button>
-              </div>
-            </Card>
-
-            <Card style={customCardStyle}>
-              <h2 className={`${styles['title']}`}>Dual Sus Service</h2>
-              <p className={`${styles['content']}`}>
-                When your dual suspension needs an extra bit more.
-              </p>
-              <div className={`${styles['btn']}`}>
-                <Button width='full' variant='ghost'>
-                  Details
-                </Button>
-              </div>
-            </Card>
-
-            <Card style={customCardStyle}>
-              <h2 className={`${styles['title']}`}>Pro Wash and Lube</h2>
-              <p className={`${styles['content']}`}>
-                Let your bike look brand new.
-              </p>
-              <div className={`${styles['btn']}`}>
-                <Button width='full' variant='ghost'>
-                  Details
-                </Button>
-              </div>
-            </Card>
+            {
+              ServiceStore.featuredServices.map(item => (
+                <Card style={customCardStyle}>
+                  <Card.Title>
+                    <h2>
+                      {item.title}
+                    </h2>
+                  </Card.Title>
+                  
+                  <Card.Content>
+                    <p>
+                      {item.slogan}
+                    </p>
+                  </Card.Content>
+                  
+                  <Card.Action>
+                    <Button width='full' variant='ghost' onClick={() => AppStore.OpenModal(item.title, (<p>dsgf</p>))}>
+                      Details
+                    </Button>
+                  </Card.Action>
+                </Card>
+              ))
+            }
+            
           </div>
 
           <div className={`${styles['section-action']}`}>

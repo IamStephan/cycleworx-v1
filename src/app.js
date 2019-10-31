@@ -12,6 +12,7 @@ import Modal from './globalComponents/modal/modal'
 import Loader from './components/pageLoader/pageLoader'
 
 import AppStore from './stores/appStore'
+import ServiceStore from './stores/servicesStore'
 
 // Loadable components
 const Home = Loadable({
@@ -30,7 +31,8 @@ const Contact = Loadable({
 })
 
 const stores = {
-  AppStore
+  AppStore,
+  ServiceStore
 }
 
 class App extends Component {

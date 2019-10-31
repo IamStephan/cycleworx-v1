@@ -27,21 +27,6 @@ $breakPointTwo: 550px;
         .section-content {
             display: flex;
 
-            .title {
-                text-align: center;
-                padding: $padding;
-            }
-
-            .content {
-                padding: $padding;
-                flex: 1;
-                text-align: center;
-            }
-
-            .btn {
-                padding: $padding;
-            }
-
             .routes {
                 position: relative;
 

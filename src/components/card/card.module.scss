@@ -4,8 +4,25 @@
     border-radius: $borderRadius;
     border: $borderWidth $borderStyle rgba($light, 0.35);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 
     * {
         color: $light
+    }
+
+    .card-title {
+        text-align: center;
+        padding: $padding;
+    }
+
+    .card-content {
+        padding: $padding;
+        text-align: center;
+        flex: 1;
+    }
+
+    .card-action {
+        padding: $padding;
     }
 }
