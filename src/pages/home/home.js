@@ -10,6 +10,7 @@ import test2 from '../../static/mark-northern-qvk8QFyGfWA-unsplash.jpg';
 import Carousal from '../../components/carousal/carousal'
 import Button from '../../components/button/button';
 import Card from '../../components/card/card'
+import Icon from '../../components/icon/icon';
 
 const customCardStyle = {
   margin: globals.margin,
@@ -50,23 +51,19 @@ export default class Home extends Component {
 
           <div className={`${styles['section-content']}`}>
             {
-              ServiceStore.featuredServices.map(item => (
-                <Card style={customCardStyle}>
+              ServiceStore.featuredServices.map((item, i) => (
+                <Card key={i} style={customCardStyle}>
                   <Card.Title>
                     <h2>
                       {item.title}
                     </h2>
                   </Card.Title>
                   
-                  <Card.Content>
-                    <p>
-                      {item.slogan}
-                    </p>
-                  </Card.Content>
-                  
                   <Card.Action>
-                    <Button width='full' variant='ghost' onClick={() => AppStore.OpenModal(item.title, (<p>dsgf</p>))}>
-                      Details
+                    <Button width='full' variant='ghost' onClick={() => AppStore.OpenModal(item.title, (
+                      <p>{item.description}</p>
+                    ))}>
+                      <Icon name='info-circle' color={globals.primary} />
                     </Button>
                   </Card.Action>
                 </Card>

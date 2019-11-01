@@ -12,6 +12,8 @@
         margin: auto;
 
         .section {
+            padding-bottom: 50px;
+
             h1 {
                 text-align: center;
                 color: $light;
@@ -20,6 +22,33 @@
             .content {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-gap: $margin * 2;
+            }
+
+            .table {
+                border-collapse: collapse;
+                width: 100%;
+                color: $light;
+
+                tr {
+                    border-bottom: $borderWidth $borderStyle $light;
+
+                    &:hover{
+                        background-color: rgba($light, 0.1);
+                    }
+                    
+                    td {
+                        padding: $padding;
+
+                        &.title {
+                            width: 1%;
+                            white-space: nowrap;
+                            font-weight: bolder;
+                        }
+
+                        
+                    }
+                }
             }
         }
     }

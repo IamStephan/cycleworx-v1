@@ -26,6 +26,11 @@
             align-items: center;
             color: $light;
         }
+
+        p {
+            padding: $padding;
+            color: $light;
+        }
     }
 
     .dimmer {
