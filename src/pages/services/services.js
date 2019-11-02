@@ -8,6 +8,8 @@ import Card from '../../components/card/card'
 import Button from '../../components/button/button';
 import Icon from '../../components/icon/icon';
 
+import svg from '../../static/311002.svg'
+
 @inject('AppStore', 'ServiceStore')
 @observer
 export default class Services extends Component {
@@ -17,6 +19,11 @@ export default class Services extends Component {
     return (
       <div className={`${styles['services']}`}>
         <div className={`${styles['main']}`}>
+          <div className={`${styles['hero']}`}>
+            <img src={svg} />
+            <h1 className={`${styles['title']}`}>Workshop</h1>
+          </div>
+
           <section className={`${styles['section']} ${styles['section-featured']}`}>
             <h1>Popular Services</h1>
 

@@ -4,8 +4,8 @@ import { observer, inject } from 'mobx-react';
 import globals from '../../utils/global.scss';
 import styles from './home.module.scss'
 
-import test from '../../static/riley-harrison-9TNGeodpVEA-unsplash.jpg';
-import test2 from '../../static/mark-northern-qvk8QFyGfWA-unsplash.jpg';
+import test from '../../static/riley-harrison-9TNGeodpVEA-unsplash.webp';
+import test2 from '../../static/mark-northern-qvk8QFyGfWA-unsplash.webp';
 
 import Carousal from '../../components/carousal/carousal'
 import Button from '../../components/button/button';
@@ -102,41 +102,6 @@ export default class Home extends Component {
           <h1 className={`${styles['section-title']}`}>
             Fun Routes
           </h1>
-
-          <div className={`${styles['section-content']}`}>
-            <Card style={customCardStyle}>
-              <div className={`${styles['routes']}`}>
-                <iframe title='map1' src="https://www.google.com/maps/d/embed?mid=15sWGTUuuilCd8lJxJzqQWBmnjvE&hl=en" />
-              </div>
-              <div className={`${styles['btn']}`}>
-                <Button width='full' variant='ghost'>
-                  Details
-                </Button>
-              </div>
-            </Card>
-
-            <Card style={customCardStyle}>
-              <div className={`${styles['routes']}`}>
-                <iframe title='map2' src="https://www.google.com/maps/d/embed?mid=15sWGTUuuilCd8lJxJzqQWBmnjvE&hl=en" />
-              </div>
-              <div className={`${styles['btn']}`}>
-                <Button width='full' variant='ghost'>
-                  Details
-                </Button>
-              </div>
-            </Card>
-
-            <Card style={customCardStyle}>
-              <div className={`${styles['routes']}`}>
-                <iframe title='map3' src="https://www.google.com/maps/d/embed?mid=15sWGTUuuilCd8lJxJzqQWBmnjvE&hl=en" />
-              </div>
-              <div className={`${styles['btn']}`}>
-                <Button width='full' variant='ghost'>
-                  Details
-                </Button>
-              </div>
-            </Card>
-          </div>
 
           <div className={`${styles['section-action']}`}>
             <Button>

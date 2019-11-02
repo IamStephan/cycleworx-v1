@@ -80,7 +80,7 @@ export default class Topbar extends Component {
                   type='light'
                   onClick={() => this.openPage('/services')}
                 >
-                  Services
+                  Workshop
                 </Button>
 
                 <Button
@@ -103,11 +103,11 @@ export default class Topbar extends Component {
 
                 <Button
                   variant='ghost'
-                  state={this.props.location.pathname === '/routes' ? 'toggled' : 'active'}
+                  state={this.props.location.pathname === '/contact' ? 'toggled' : 'active'}
                   type='light'
-                  onClick={() => this.openPage('/routes')}
+                  onClick={() => this.openPage('/contact')}
                 >
-                  Routes
+                  Contact Us
                 </Button>
               </Button.Group>
             )

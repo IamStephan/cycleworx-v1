@@ -79,7 +79,7 @@ export default class MobileRightBar extends Component {
                 state={this.props.location.pathname === '/services' ? 'toggled' : 'active'}
                 variant='ghost'
               >
-                Services
+                Workshop
               </Button>
 
               <Button
@@ -104,12 +104,12 @@ export default class MobileRightBar extends Component {
 
               <Button
                 onClick={() => {
-                  this.openPage('/routes')
+                  this.openPage('/contact')
                 }}
-                state={this.props.location.pathname === '/routes' ? 'toggled' : 'active'}
+                state={this.props.location.pathname === '/contact' ? 'toggled' : 'active'}
                 variant='ghost'
               >
-                Routes
+                Contact Us
               </Button>
             </Button.Group>
           </div>
