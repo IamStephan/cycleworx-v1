@@ -21,7 +21,10 @@ export default class Services extends Component {
         <div className={`${styles['main']}`}>
           <div className={`${styles['hero']}`}>
             <img src={svg} />
-            <h1 className={`${styles['title']}`}>Workshop</h1>
+            <div className={`${styles['title']}`}>
+              <span>Work</span>
+              <span>shop</span>
+            </div>
           </div>
 
           <section className={`${styles['section']} ${styles['section-featured']}`}>

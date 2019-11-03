@@ -1,0 +1,13 @@
+@import '../../utils/global.scss';
+
+.input {
+    background-color: transparent;
+    padding: $padding;
+    border: $borderWidth $borderStyle $light;
+    border-radius: $borderRadius;
+    color: $light;
+
+    &:focus {
+        outline: none;
+    }
+}
