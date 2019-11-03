@@ -6,8 +6,10 @@ import styles from './home.module.scss'
 
 import Input from '../../components/input/input';
 import Button from '../../components/button/button'
+import BeforeAfter from '../../components/beforeAfter/beforeAfter'
 
 import homeImg from '../../static/Cycleworx-Langebaan9.jpg'
+import homeImg2 from '../../static/Cycleworx-Langebaan14.jpg'
 
 @inject('AppStore', 'ServiceStore')
 @observer
@@ -33,13 +35,14 @@ export default class Home extends Component {
               Welcome to Cycleworx Langebaan
             </h1>
             <h3>Bicycle Workshop and Retailer</h3>
-
             <div className={`${styles['tracking']}`}>
               <Input style={{margin: globals.margin}} placeholder='Bicycle Tracking ID' />
               <Button>Track</Button>
             </div>
           </div>
         </div>
+
+        <BeforeAfter before={homeImg} after={homeImg2} />
       </div>
     )
   }

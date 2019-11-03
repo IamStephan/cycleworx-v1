@@ -20,7 +20,7 @@ export default class Services extends Component {
       <div className={`${styles['services']}`}>
         <div className={`${styles['main']}`}>
           <div className={`${styles['hero']}`}>
-            <img src={svg} />
+            <img alt='Workshop' src={svg} />
             <div className={`${styles['title']}`}>
               <span>Work</span>
               <span>shop</span>
