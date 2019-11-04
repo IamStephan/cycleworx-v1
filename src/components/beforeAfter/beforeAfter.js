@@ -32,7 +32,7 @@ export default class BeforeAfter extends Component {
   calculateRatio() {
     this.setState({
       ...this.state,
-      parentRatio: this.Parent.getBoundingClientRect().height / this.Parent.getBoundingClientRect().width
+      parentRatio: (this.Parent.getBoundingClientRect().height / this.Parent.getBoundingClientRect().width) * 25
     })
   }
 
@@ -57,7 +57,7 @@ export default class BeforeAfter extends Component {
 
         <input
           style={{
-            width: `${100 + (this.state.parentRatio * 10)}%`
+            width: `${100 + (this.state.parentRatio)}%`
           }}
           className={`${styles['slider']}`} 
           type='range' ref={ref => this.Slider = ref}

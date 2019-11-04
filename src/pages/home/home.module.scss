@@ -1,6 +1,17 @@
 @import '../../utils/global.scss';
 @import '../../globalComponents/topbar/topbar.module.scss';
 
+$breakpointOne: 700px;
+
+@mixin section {
+    display: flex;
+    max-width: 980px;
+    margin: auto;
+    padding-bottom: 50px;
+    position: relative;
+    color: $light;
+}
+
 .home {
     min-height: calc(100vh - #{$topbarHeight}px);
     background-color: lighten($dark, 3%);
@@ -9,6 +20,16 @@
         height: calc(80vh - #{$topbarHeight}px);
         display: flex;
         position: relative;
+        margin-bottom: 50px;
+        background: linear-gradient(to bottom, $primary 0%, transparent 100%);
+
+        .hero-img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+            object-fit: cover;
+        }
 
         .top {
             flex: 1.5;
@@ -19,11 +40,66 @@
             color: $light;
             padding: $padding;
             z-index: 4;
+            text-align: center;
 
             .tracking {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+            }
+        }
+    }
+
+    .workshop {
+        @include section();
+
+        .info {
+            flex: 1;
+            color: $light;
+            
+            .title {
+                text-align: center;
+            }
+
+            .content {
+                p {
+                    margin: $margin * 2;
+                }
+            }
+
+            .action {
+                margin: $margin * 2;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .ba {
+            flex: 1;
+            margin: $margin;
+        }
+    }
+
+    .rentals {
+        @include section();
+        flex-direction: column;
+        text-align: center;
+
+        .carousal {
+            height: calc(75vh - #{$topbarHeight}px);
+            padding: $padding;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointOne) {
+    .home {
+
+        .workshop {
+            flex-direction: column-reverse;
+
+            .ba {
+                height: 200px;
             }
         }
     }
