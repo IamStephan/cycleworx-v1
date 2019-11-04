@@ -1,0 +1,7 @@
+@import '../../utils/global.scss';
+@import '../../globalComponents/topbar/topbar.module.scss';
+
+.rentals {
+    min-height: calc(100vh - #{$topbarHeight}px);
+    background-color: lighten($dark, 3%);
+}

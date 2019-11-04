@@ -20,6 +20,11 @@ const Home = Loadable({
   loading: Loader
 })
 
+const Rentals = Loadable({
+  loader: () => import('./pages/rentals/rentals'),
+  loading: Loader
+})
+
 const Services = Loadable({
   loader: () => import('./pages/services/services'),
   loading: Loader
@@ -49,6 +54,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/services' component={Services} />
+              <Route exact path='/rentals' component={Rentals} />
               <Route exact path='/contact' component={Contact} />
             </Switch>
             <Footer />
