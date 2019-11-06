@@ -13,26 +13,26 @@ export default class BeforeAfter extends Component {
     super(props)
 
     this.state = {
-      offset: 50,
-      parentRatio: 0
+      offset: 25,
+      sliderWidth: 0
     }
 
-    this.calculateRatio = this.calculateRatio.bind(this)
+    this.calculateWidthOfSlider = this.calculateWidthOfSlider.bind(this)
   }
 
   componentDidMount() {
-    this.calculateRatio()
-    window.addEventListener('resize', this.calculateRatio)
+    this.calculateWidthOfSlider()
+    window.addEventListener('resize', this.calculateWidthOfSlider)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.calculateRatio)
+    window.removeEventListener('resize', this.calculateWidthOfSlider)
   }
 
-  calculateRatio() {
+  calculateWidthOfSlider() {
     this.setState({
       ...this.state,
-      parentRatio: (this.Parent.getBoundingClientRect().height / this.Parent.getBoundingClientRect().width) * 25
+      sliderWidth: this.Parent.getBoundingClientRect().width + 50
     })
   }
 
@@ -55,13 +55,21 @@ export default class BeforeAfter extends Component {
           src={this.props.after}
         />
 
+        <div
+          className={`${styles['divider']}`}
+          style={{
+            left: `${this.state.offset}%`
+          }}
+        />
+
         <input
           style={{
-            width: `${100 + (this.state.parentRatio)}%`
+            width: `${this.state.sliderWidth}px`
           }}
           className={`${styles['slider']}`} 
           type='range' ref={ref => this.Slider = ref}
           onChange={(e) => this.setState({...this.state ,offset: e.target.value})}
+          value={this.state.offset}
         />
       </div>
     );

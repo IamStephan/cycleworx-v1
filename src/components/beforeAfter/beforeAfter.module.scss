@@ -30,6 +30,15 @@ $thumbSize: 50px;
         z-index: 3;
     }
 
+    .divider {
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        width: 5px;
+        background-color: $light;
+        z-index: 5;
+    }
+
     .slider {
         z-index: 5;
         position: absolute;
@@ -52,7 +61,6 @@ $thumbSize: 50px;
             -webkit-appearance: none;
             width: $thumbSize;
             height: $thumbSize;
-            border: 3px $borderStyle $light;
             border-radius: 50%;
             background-color: $light;
             pointer-events: auto;
