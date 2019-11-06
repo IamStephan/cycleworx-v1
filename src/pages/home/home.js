@@ -62,7 +62,10 @@ export default class Home extends Component {
           </div>
 
           <div className={`${styles['ba']}`}>
-            <BeforeAfter before={require('../../static/riley-harrison-9TNGeodpVEA-unsplash.webp')} after={require('../../static/riley-harrison-9TNGeodpVEA-unsplash.webp')} />
+            <BeforeAfter
+              before={require('../../static/riley-harrison-9TNGeodpVEA-unsplash.webp')}
+              after={require('../../static/riley-harrison-9TNGeodpVEA-unsplash.webp')}
+            />
           </div>
         </section>
         
