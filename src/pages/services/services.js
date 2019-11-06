@@ -7,6 +7,7 @@ import styles from './services.module.scss'
 import Card from '../../components/card/card'
 import Button from '../../components/button/button';
 import Icon from '../../components/icon/icon';
+import BeforeAfter from '../../components/beforeAfter/beforeAfter';
 
 import svg from '../../static/311002.svg'
 
@@ -19,25 +20,32 @@ export default class Services extends Component {
     return (
       <div className={`${styles['services']}`}>
         <div className={`${styles['main']}`}>
-          <div className={`${styles['hero']}`}>
-            <img alt='Workshop' src={svg} />
+          <section className={`${styles['hero']}`}>
             <div className={`${styles['title']}`}>
-              <span>Work</span>
-              <span>shop</span>
+              <h1>
+                Workshop
+              </h1>
             </div>
-          </div>
+            <BeforeAfter
+              before={require('../../static/riley-harrison-9TNGeodpVEA-unsplash.webp')}
+              after={require('../../static/riley-harrison-9TNGeodpVEA-unsplash.webp')}
+            />
+          </section>
 
           <section className={`${styles['section']} ${styles['section-featured']}`}>
-            <h1>Popular Services</h1>
+            <div className={`${styles['title']}`}>
+              <h2>Popular Services</h2>
+            </div>
+            
 
             <div className={`${styles['content']}`}>
               {
                 ServiceStore.featuredServices.map((item, i) => (
                   <Card key={i}>
                     <Card.Title>
-                      <h2>
+                      <h3>
                         {item.title}
-                      </h2>
+                      </h3>
                     </Card.Title>
 
                     <Card.Action>
@@ -54,7 +62,9 @@ export default class Services extends Component {
           </section>
 
           <section className={`${styles['section']}`}>
-            <h1>All Our Services</h1>
+            <div className={`${styles['title']}`}>
+              <h2>All Our Services</h2>
+            </div>
 
             <table className={`${styles['table']}`}>
               
