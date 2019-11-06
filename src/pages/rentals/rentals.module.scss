@@ -4,4 +4,38 @@
 .rentals {
     min-height: calc(100vh - #{$topbarHeight}px);
     background-color: lighten($dark, 3%);
+    padding: $padding;
+
+    .main {
+        max-width: 980px;
+        margin: auto;
+
+        .hero {
+            height: calc(60vh - #{$topbarHeight}px);
+            position: relative;
+            margin: $margin;
+            margin-bottom: 50px;
+            user-select: none;
+
+            .title {
+                color: $light;
+                text-align: center;
+            }
+        }
+
+        .section {
+            padding-top: 50px;
+
+            .title {
+                text-align: center;
+                color: $light;
+            }
+
+            .content {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-gap: $margin * 2;
+            }
+        }
+    }
 }
