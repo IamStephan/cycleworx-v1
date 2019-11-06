@@ -17,6 +17,7 @@ export default class Contact extends Component {
           <br />
           <div>
             <h2>Contact information</h2>
+            <p><b>Owner:</b> Jon Amira</p>
             <p><b>Email:</b> cycleworxlbn@gmail.com</p>
             <p><b>Tel:</b> 073 734 4098</p>
           </div>
