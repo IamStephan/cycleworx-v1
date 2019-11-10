@@ -94,11 +94,11 @@ export default class Topbar extends Component {
 
                 <Button
                   variant='ghost'
-                  state={this.props.location.pathname === '/bikes' ? 'toggled' : 'active'}
+                  state={this.props.location.pathname === '/about' ? 'toggled' : 'active'}
                   type='light'
-                  onClick={() => this.openPage('/bikes')}
+                  onClick={() => this.openPage('/about')}
                 >
-                  Bikes
+                  About Us
                 </Button>
 
                 <Button

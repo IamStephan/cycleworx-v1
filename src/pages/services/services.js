@@ -9,8 +9,6 @@ import Button from '../../components/button/button';
 import Icon from '../../components/icon/icon';
 import BeforeAfter from '../../components/beforeAfter/beforeAfter';
 
-import svg from '../../static/311002.svg'
-
 @inject('AppStore', 'ServiceStore')
 @observer
 export default class Services extends Component {
