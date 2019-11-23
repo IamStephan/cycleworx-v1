@@ -13,6 +13,7 @@ import Loader from './components/pageLoader/pageLoader'
 
 import AppStore from './stores/appStore'
 import ServiceStore from './stores/servicesStore'
+import RentalsStore from './stores/rentalsStore'
 
 // Loadable components
 const Home = Loadable({
@@ -37,7 +38,8 @@ const Contact = Loadable({
 
 const stores = {
   AppStore,
-  ServiceStore
+  ServiceStore,
+  RentalsStore
 }
 
 class App extends Component {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
 
 import styles from './rentals.module.scss';
 
@@ -7,8 +8,12 @@ import Button from '../../components/button/button';
 import Icon from '../../components/icon/icon';
 import Carousal from '../../components/carousal/carousal';
 
+@inject('RentalsStore')
+@observer
 export default class Rentals extends Component {
   render() {
+    const { RentalsStore } = this.props
+
     return (
       <div className={`${styles['rentals']}`}>
         <div className={`${styles['main']}`}>
@@ -32,13 +37,20 @@ export default class Rentals extends Component {
 
             <div className={`${styles['content']}`}>
               {
-                [1,1,1,1].map((item, i) => (
-                  <Card key={i}>
+                RentalsStore.bikes.map((bike, i) => (
+                  <Card key={i + 'bike'}>
                     <Card.Title>
                       <h3>
-                        hu
+                        {bike.name}
                       </h3>
                     </Card.Title>
+                    <Card.Content>
+                      {
+                        bike.sizes.map((size, i) => (
+                          <li key={i + 'size'}>{size}</li>
+                        ))
+                      }
+                    </Card.Content>
                   </Card>
                 )) 
               }
